@@ -166,3 +166,51 @@ select {
     background: white;
     color: #7286D3;
 }
+
+@media screen and (max-width: 630px) {
+    form input {
+        width: 250px;
+        margin: 0 auto;
+    }
+    form {
+        max-width: 450px;
+       margin: 0 auto;
+    }
+    .select {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    form input {
+        width: 150px;
+        margin: 0 auto;
+    }
+    form {
+        max-width: 350px;
+       margin: 0 auto;
+    }
+    .select {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 360px) {
+     form {
+        max-width: 250px;
+        display: block;
+       margin: 0 auto;
+    }
+    .select {
+        display: inline-block;
+        margin-left: 40px;
+        margin-right: 50px;
+    }
+    .todo-button {
+        width: 50px;
+    }
+    form input {
+        display: inline-block;
+        margin-left: 25px;
+    }
+}
