@@ -7,12 +7,14 @@ const deleteAllBtn = document.querySelector(".delete-all");
 
 // Event listener
 document.addEventListener("DOMContentLoaded", getTodos);
-todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteChecked);
-filterOption.addEventListener("click", filterTodo);
+todoInput.addEventListener("input", function () {
+  todoButton.disabled = todoInput.value === "";
+});
+todoButton.addEventListener("click", addTodo);
+filterOption.addEventListener("change", filterTodo);
 deleteAllBtn.addEventListener("click", deleteAll);
 
-// Functions
 function addTodo(event) {
   event.preventDefault();
   // todo div
@@ -23,6 +25,7 @@ function addTodo(event) {
   newTodo.innerText = todoInput.value;
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
+
   // add todo to localstorage
   saveLocalsTodo(todoInput.value);
   // completed button
@@ -39,6 +42,7 @@ function addTodo(event) {
   todoList.appendChild(todoDiv);
   // clear todo input
   todoInput.value = "";
+  todoButton.disabled = true;
 }
 
 function deleteChecked(e) {
