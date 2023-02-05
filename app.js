@@ -42,6 +42,7 @@ function addTodo(event) {
   todoList.appendChild(todoDiv);
   // clear todo input
   todoInput.value = "";
+  // to disabled button
   todoButton.disabled = true;
 }
 
